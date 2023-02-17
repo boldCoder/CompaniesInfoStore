@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/CompaniesInfoStore/internal/config"
-	// m1 "github.com/CompaniesInfoStore/internal/services/company/model"
-	m2 "github.com/CompaniesInfoStore/internal/services/user/model"
+	companyModel "github.com/CompaniesInfoStore/internal/services/company/model"
+	userModel "github.com/CompaniesInfoStore/internal/services/user/model"
 	"github.com/CompaniesInfoStore/pkg/database"
 	"github.com/CompaniesInfoStore/pkg/logger"
 
@@ -50,7 +50,7 @@ func (a *Application) Init(ctx context.Context) {
 		return
 	}
 
-	if err = db.AutoMigrate(&m2.User{}); err != nil {
+	if err = db.AutoMigrate(&companyModel.CompanyInfo{}, &userModel.User{}); err != nil {
 		fmt.Println("[ERROR]: Migrating Database")
 		return
 	}
