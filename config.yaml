@@ -1,0 +1,21 @@
+#Server Configuration
+server:
+  host: localhost
+  port: 9000
+
+  
+# Database Credentials
+database:
+  name: "company_info"
+  user: "root"
+  password: "secret"
+  port: 3306
+  host: "localhost"
+  timeout: 60
+
+# Log Level
+logging:
+  level: 0 #debug
+
+error:
+  level: 1
