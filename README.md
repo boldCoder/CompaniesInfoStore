@@ -1,6 +1,14 @@
 ## Run Project:
 ---------------
 
+### Run in Docker Container:
+----------------------------
+1. Install Docker in your machine.
+2. Navigate to the repository directory, open terminal and run: `docker-compose up`.
+3. In Postman app, use url as `localhost:9000/[followed by the endpoints mentioned below]`.
+4. Run `docker-compose down` to remove the containers.
+5. At the end, run `docker image prine -a`.
+
 ### Run in Local Machine:
 1. Install golang in your system.
 2. Copy git repo on your local machine. [Repo Link](https://github.com/boldCoder/CompaniesInfoStore)
@@ -24,7 +32,7 @@
 
 ### Endpoints:
 --------------
-    For SignUp:
+    1. For SignUp:
     -----------
     Method: POST 
     Endpoint: host:port/user/signup 
@@ -37,7 +45,7 @@
     ```
 
 
-    For Login:
+    2. For Login:
     -----------
     Method: POST 
     Endpoint: host:port/user/login 
@@ -50,7 +58,7 @@
     ```
 
 
-    Create Resource:
+    3. Create Resource:
     ----------------
     Method: POST 
     Endpoint: host:port/company/create 
@@ -67,7 +75,7 @@
     ]
     ```
 
-    For Update a resource:
+    4. For Update a resource:
     ----------------------
     Method: PATCH 
     Endpoint: host:port/company/update
@@ -83,14 +91,14 @@
     ```
 
 
-    For Get resource by ID:
+    5. For Get resource by ID:
     -----------------------
     GET /company/get/{id}
     Method: GET 
     Endpoint: host:port/company/get/{id} 
 
 
-    For Delete resource by ID:
+    6. For Delete resource by ID:
     --------------------------
     Method: DELETE 
     Endpoint: host:port/company/delete/{id}
