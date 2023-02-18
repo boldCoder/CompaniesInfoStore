@@ -19,5 +19,5 @@ RUN go build -o main ./cmd/
 
 EXPOSE 9000
 
-CMD ["/main"]
+CMD ["./main"]
 

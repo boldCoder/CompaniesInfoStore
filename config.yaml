@@ -10,7 +10,7 @@ database:
   user: "root"
   password: "secret"
   port: 3306
-  host: "localhost"
+  host: "host.docker.internal"
   timeout: 60
 
 # Log Level

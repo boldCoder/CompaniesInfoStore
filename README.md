@@ -3,7 +3,7 @@
 
 ### Run in Local Machine:
 1. Install golang in your system.
-2. Copy git repo on your local machine. [Repo Link]()
+2. Copy git repo on your local machine. [Repo Link](https://github.com/boldCoder/CompaniesInfoStore)
 3. Open terminal, navigate to the folder, where the repo is downloaded.
 4. To install project dependencies, Run: `go mod tidy` 
 5. Run: `go build -o main ./cmd/`
@@ -11,6 +11,7 @@
 
 
 ### Authentication:
+-------------------
 1. Open Postman app. 
 2. In order to generate JWT token, first signup with email and password.
 3. After the user is successfully created, you can login ang get an authentication token in the Cookie. 
@@ -22,6 +23,7 @@
 
 
 ### Endpoints:
+--------------
     For SignUp:
     -----------
     Method: POST 
@@ -40,7 +42,7 @@
     Method: POST 
     Endpoint: host:port/user/login 
     Body:
-   ```
+    ```
     {
     "email":"gaurav1@gmail.com",
     "password":"qwerty12"

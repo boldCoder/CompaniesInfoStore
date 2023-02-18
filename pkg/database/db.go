@@ -22,11 +22,11 @@ func NewDB(config *Config, logg zerolog.Logger) (*gorm.DB, error) {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=true",
 		config.User, config.Password, config.Host, config.Port, config.Name)
 
+	logg.Info().Msgf("[DB Database DSN]: %s", dsn)
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Error),
 	})
 	if err != nil {
-		// log.Errorf("unable to open db: %v", err)
 		return nil, fmt.Errorf("unable to open db coonnection: %w", err)
 	}
 

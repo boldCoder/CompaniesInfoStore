@@ -2,7 +2,6 @@ package user
 
 import (
 	"context"
-	"fmt"
 	"time"
 
 	"github.com/CompaniesInfoStore/internal/config"
@@ -48,7 +47,6 @@ func (s *Service) ValidateUser(ctx context.Context, logger zerolog.Logger, email
 		"exp": time.Now().Add(time.Hour).Unix(),
 	})
 
-	fmt.Println("[SECRET]: ", s.cfg.Secret, []byte(s.cfg.Secret))
 	tokenString, err := token.SignedString([]byte(s.cfg.Secret))
 	if err != nil {
 		logger.Error().Err(err).Msgf("error creating jwt string")

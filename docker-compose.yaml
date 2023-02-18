@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-   container_name: company_info 
+   container_name: company 
    build: .
    ports:
     - 9000:9000
@@ -9,19 +9,18 @@ services:
    volumes:
      - api:/usr/src/app/
    depends_on:
-     - fullstack-mysql
+     - db_mysql
    networks:
       - fullstack
 
-  fullstack-mysql:
+  db_mysql:
     image: mysql:latest
-    container_name: full_db_mysql
+    restart: on-failure
+    container_name: db_mysql
     ports: 
       - 3306:3306
-    environment: 
-      - MYSQL_ROOT_HOST=localhost 
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=secret
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
       - MYSQL_DATABASE=company_info
     volumes:
       - database_mysql:/var/lib/mysql

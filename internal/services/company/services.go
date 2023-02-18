@@ -41,8 +41,6 @@ func (s *Service) GetCompanyByID(ctx context.Context, logger zerolog.Logger, id 
 }
 
 func (s *Service) UpdateCompanyDetails(ctx context.Context, logger zerolog.Logger, company model.CompanyInfo) (model.CompanyInfo, error) {
-	fmt.Println(">>>>>>>>>> coming in UpdateCompanyDetails")
-
 	resp, err := s.repo.Update(ctx, logger, company)
 	if err != nil {
 		return model.CompanyInfo{}, fmt.Errorf("failed to update company details: %w", err)
